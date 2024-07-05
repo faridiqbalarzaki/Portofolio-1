@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Portfolio</title>
+    <link rel="icon" type="image/png" href="images/favicon-32x32.png">
+    <link rel="stylesheet" href="style.css">
+    <!-- Font awesome cdn font icon css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+<body>
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-p"></i>
+                    <div class="logo-text">Portfolio</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#">Beranda</a></li>
+                        <li><a href="#about">Tentang Saya</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="hero-pic">
+                    <img src="images/foto.jpeg" alt="profile pic">
+                </div>
+                <div class="hero-text">
+                    <h2>Hello, I Am</h2>
+                    <h1>Farid Iqbal Arzaki</h1>
+                    <p>"Selamat datang di portofolio saya."
+                        berikut beberapa pencapaian yang sudah saya raih
+                    </p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn active">Contact</a>
+                    </div>
+                    <div class="social">
+                        <a href="https://www.tiktok.com/@frdiqbl"><i class="fa-brands fa-tiktok"></i></a>
+                        <a href="https://www.linkedin.com/in/farid-iqbal-5a3b14296/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://www.instagram.com/frdiqbl"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="wrapper">
+            <h2>Tentang Saya</h2>
+            <img src="images/1.jpeg" alt="about image">
+            <p>Perkenalkan nama saya Farid Iqbal Arzaki, Saya dari Malang Jawa Timur. Di sini saya masih duduk di bangku Sekolah Menengah Kejuruan Negri 1 Kepanjen. Ada beberapa skill yang saya kuasai.</p>
+            <div class="tab-titles">
+                <p class="tab-links">Designer</p>
+                <p class="tab-links">Service</p>
+                <p class="tab-links">Software Engineering</p>
+            </div>
+
+<!-- Skills & Tools -->
+ <section id="skills">
+<div class="container-fluid">
+    <div class="title-skills">
+      <h1>Skills <span>& Tools</span></h1>
+    </div>
+    <div class="row gambar-skills">
+      <div class="col-lg-3 col-md-6">
+        <div class="main-card">
+          <img src="images/clogo.png" class="rounded" alt="...">
+        </div>
+      </div>
+      <div class="col-lg-3 col-md-6">
+        <div class="main-card">
+          <img src="images/flogo.png" class="rounded" alt="...">
+        </div>
+      </div>
+
+      <div class="col-lg-3 col-md-6">
+        <div class="main-card">
+          <img src="images/hlogo.png" class="rounded" alt="...">
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+
+        </div>
+    </section>
+    
+
+    <!-- Contact Section -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <style>
+        .notification {
+            display: none;
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #4CAF50;
+            color: #4CAF50;
+            background-color: #DFF2BF;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .notification.show {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .notification.hide {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+    </style>
+</head>
+<body>
+    <section id="contact" class="contact-section">
+        <div class="wrapper">
+            <h2>Contact Me</h2>
+            <form id="contactForm" method="POST" class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+            <div id="notification" class="notification">Terima kasih, pesan Anda telah terkirim.</div>
+        </div>
+    </section>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah pengiriman form secara tradisional
+            var notification = document.getElementById('notification');
+    
+            // Menunda penampilan notifikasi selama 2 detik
+            setTimeout(function() {
+                notification.classList.add('show');
+                notification.classList.remove('hide');
+    
+                // Menghilangkan notifikasi setelah 5 detik
+                setTimeout(function() {
+                    notification.classList.add('hide');
+                    setTimeout(function() {
+                        notification.classList.remove('show');
+                    }, 500); // Menunggu transisi selesai sebelum menghilangkan dari DOM
+                }, 2000);
+            }, 1000);
+    
+            this.reset(); // Mengosongkan form
+        });
+    </script>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="wrapper">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fa-solid fa-p"></i>
+                    <span>Portfolio</span>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.tiktok.com/@frdiqbl"><i class="fa-brands fa-tiktok"></i></a>
+                    <a href="https://www.linkedin.com/in/farid-iqbal-5a3b14296/"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/frdiqbl"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-location">
+                <i class="fa-solid fa-map-marker-alt"></i>
+                <span>Malang, Indonesia</span>
+            </div>
+                <p>&copy; 2024 Farid Iqbal Arzaki. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Typed.js for typing text effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+    <script>
+        var togglebtn = document.querySelector(".togglebtn");
+        var nav = document.querySelector(".navlinks");
+
+        togglebtn.addEventListener("click", function(){
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        });
+    </script>
+
+
+</body>
+</html>

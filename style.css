@@ -1,0 +1,465 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: poppins,sans-serif;
+    text-decoration: none;
+}
+body{
+    overflow-x: hidden;
+}
+.hero-header{
+    width:100%;
+    height: 100%;
+    min-height: 100vh;
+    background: #222;
+}
+.wrapper{
+    width:1280px;
+    max-width: 95%;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+header{
+    padding: 40px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.logo{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo i{
+    height: 45px;
+    width:45px;
+    background-color: #007ced;
+    border-radius: 50%;
+    color:#fff;
+    font-weight: 700;
+    font-size: 1.5rem;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    text-align: center;
+    transition: 0.3s; 
+    transition-property: transform, opacity; 
+}
+
+.logo i:hover {
+    transform: scale(1.1); 
+    opacity: 0.8; 
+
+    
+}
+.logo .logo-text{
+    font-size: 24px;
+    font-weight: 500;
+    color:#fff;
+}
+nav .togglebtn{
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top:45px;
+    right: 3%;
+    z-index: 5;
+    cursor: pointer;
+    display: none;
+}
+nav .togglebtn span{
+    display: block;
+    background-color: #007ced;
+    margin: 5px 0px;
+    width:100%;
+    height:3px;
+    transition: 0.3s;
+    transition-property:  transform, opacity;
+
+}
+
+h2 {
+    display: block;
+    color: #e5e5e5;
+    margin: 0 0px;
+    width: 30%; 
+    text-align: center; 
+    font-size: 25px;
+    transition: 0.3s; 
+    transition-property: transform, opacity; 
+}
+
+h2:hover {
+    transform: scale(1.1); 
+    opacity: 0.8; 
+}
+
+nav .navlinks{
+    list-style-type: none;
+}
+nav .navlinks li{
+    display: inline-block;
+}
+nav .navlinks li a{
+     color:#e5e5e5;
+     margin-right: 2.5rem;
+}
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-top:4rem;
+}
+.container .hero-pic{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 15px solid #444;
+    box-shadow: 5px 7px 25px rgba(0,0,0,0.5);
+}
+.hero-pic img{
+    height: 100%;
+    width:100%;
+    transition: 0.5s;
+}
+.hero-pic img:hover{
+    transform: scale(1.2);
+}
+.hero-text{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+}
+.hero-text h5{
+    color:#e5e5e5;
+    font-size: 14px;
+}
+.hero-text h5 span{
+    color:#007ced;
+    font-size: 16px;
+}
+.hero-text h1{
+    color: #007ced;
+    font-size: 3rem;
+}
+.hero-text p{
+    color:#e5e5e5;
+
+}
+.btn-group{
+    margin:45px 0;
+}
+.btn-group .btn{
+    border-color: #d5d5d5;
+    color:#fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 0px;
+    margin-right:7px;
+    border-radius: 30px;
+    border:2px solid #e5e5e5;
+    box-shadow:  0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+.btn.active{
+    border-color: #007ced;
+}
+.hero-text .social i{
+    color: #e5e5e5;
+    font-size: 18px;
+    margin-right: 10px;
+    transition: 0.5s;
+}
+.hero-text .social i:hover{
+    color:#007ced;
+    transform: rotate(360deg);
+}
+/* Respnosiv design & displaying navbar for small screen */
+@media(max-width:930px)
+{
+    nav .togglebtn{
+        display: initial;
+    }
+    /* for toggle button**/
+    .click {
+        top:45px;
+    }
+    .click span{
+        position: absolute;
+        margin-top:12px
+    }
+    .click span:first-child{
+        transform: rotate(-40deg);
+    }
+    .click span:nth-child(2)
+    {
+        opacity: 0;
+        margin:0;
+    }
+    .click span:last-child{
+        transform: rotate(45deg);
+        top:0;
+    }
+    nav .navlinks{
+        position: absolute;
+        top:110px;
+        right:-100%;
+        bottom: 0;
+        width: 60%;
+        height: 100vh;
+        background-color: #222;
+        z-index: 3;
+        box-shadow: 5px 13px 30px rgba(0,0,0,0.1);
+        transition: 0.5s;
+        padding: 25px 0px;
+    }
+    nav .navlinks li{
+        display: block;
+    }
+    nav .navlinks li a{
+        display: block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    nav .navlinks.open{
+        right:0;
+    }
+}
+@media(max-width:768px)
+{
+    .container{
+        flex-direction: column;
+        padding-top:2rem
+    }
+    .hero-text{
+        padding:40px 0px;
+    }
+}
+/* About Section */
+.about-section {
+    background-color: #272626;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+    image-rendering: auto;
+}
+
+
+
+.about-section img {
+    max-width: 300px; /* Sesuaikan ukuran sesuai kebutuhan */
+    margin-right: 20px;
+    float: left;
+    border-radius: 15px;
+}
+
+.about-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #007ced;
+    padding: 50px;
+    font-size: 25px;
+
+}
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tab-titles{
+    display: flex;
+    margin: 30px 0 40px;
+}
+.tab-links{
+    margin-right: 10px; /* Reduced margin */
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+/* About Section */
+.about-section {
+    padding: 4rem 0;
+}
+.about-section h2 {
+    font-family: var(--abril);
+    font-size: 50px;
+    padding-bottom: 4rem;
+}
+.about-section img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+.about-section p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+.tab-titles {
+    display: flex;
+    gap: 1rem;
+}
+.tab-links {
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--purple);
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.tab-links:hover {
+    background-color: var(--purple);
+    color: white;
+}
+
+/* Skills & Tools Section */
+#skills {
+    padding: 6rem 0;
+}
+.title-skills h1 {
+    font-family: var(--abril);
+    font-size: 39px;
+    padding-bottom: 4rem;
+}
+.title-skills h1:after {
+    content: '';
+    display: block;
+    border-bottom: 7px solid var(--purple);
+    width: 8%;
+    padding-bottom: 9px;
+    margin-bottom: -9px;
+}
+.title-skills span {
+    color: var(--purple);
+    padding-left: center;
+}
+
+#skills .container-fluid .gambar-skills {
+    display: flex;
+    gap: 4rem; 
+    justify-content: center; /* Menyusun gambar agar berada di tengah */
+}
+#skills .container-fluid .gambar-skills .col-lg-3 {
+    padding-bottom: 0rem;
+    
+}
+#skills .container-fluid .gambar-skills .col-lg-3 img:hover {
+    filter: invert(15%);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: #272626;
+    padding: 50px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #007ced;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #444;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007ced;
+}
+
+.contact-form button {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007ced;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+    background-color: #005bb5;
+}
+
+/* Contact Section Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 0 20px;
+    }
+}
+
+
+/* Footer */
+.footer {
+    background-color: #222;
+    padding: 20px 0;
+    text-align: center;
+    color: #e5e5e5;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    font-weight: 500;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.footer-logo i {
+    margin-right: 10px;
+}
+
+.footer-social {
+    margin: 20px 0;
+}
+
+.footer-social a {
+    color: #e5e5e5;
+    margin: 0 10px;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+
+.footer-social a:hover {
+    color: #007ced;
+}
+
+.footer p {
+    margin: 10px 0 0;
+    font-size: 14px;
+}
+
